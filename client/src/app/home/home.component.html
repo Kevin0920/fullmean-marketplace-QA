@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-group">
+      <div class="box">
+        <h1>Hi {{user?.userName}} !</h1>
+      </div>
+      <div class="box">
+        <button (click)="logout()" class="btn btn-info" style="float: right; font-family: 'Fugaz One', cursive;">Log out</button>
+      </div>
+
+      <button id="product"><a [routerLink]="['/products', user._id]">Go to Market</a></button>
+    </div>
+
+    <button id="hover"><a [routerLink]="['/question']">Add a Question</a></button>
+
+    <div class="row">
+      <div class="col-sm-6">
+          <img src="{{product?.image}}" alt="">
+      </div>
+      
+      <div class="col-sm-6">
+          <h3><strong>Title: {{product?.title}}</strong></h3>
+          <h3><strong>Location: {{product?.location}}</strong></h3>
+          <h3><strong>Price: {{product?.price}}</strong></h3>
+          <h3><strong>Description: {{product?.description}}</strong></h3>
+      </div>
+      
+    </div>
+
+    <div class="form-group">
+      <label>Search:</label>
+      <input id="searchbar" class="form-control" type="text" name="search" [(ngModel)] = "search" (keyup) = (searchQuestion()) placeholder="Search questions by title....">
+    </div>
+
+    <!-- Table Search -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Question</th>
+          <th scope="col">Creater</th>
+          <th scope="col">Answer</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>        
+        <tr *ngFor="let q of questions">
+          <td>{{q.content}}</td>
+          <td>{{q._user.userName}}</td>
+          <td>{{q._answers.length}}</td>
+          <td>
+            <button class="btn btn-info">
+              <a [routerLink]="['/show', q._id]">Show</a>
+            </button>
+            <button class="btn btn-warning">
+              <a [routerLink]="['/answer', q._id]">Answer</a>
+            </button>
+            <button class="btn btn-danger" (click)="deleteQuestion(q._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

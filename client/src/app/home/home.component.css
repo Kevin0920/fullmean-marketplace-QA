@@ -1,0 +1,83 @@
+h1 {
+  font-family: 'Berkshire Swash', cursive;
+}
+.box {
+  display: inline-block;
+}
+.box button {
+  margin-left: 825px;
+}
+
+body {
+  background: url(/./../assets/image/pexels-photo-139259.jpeg) no-repeat center center;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+}
+
+/* A tag style */
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#searchbar{
+  background-color: #1222;
+  color: #fff;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 25px;
+  border-radius: 15px;
+}
+#hover a {
+  padding: 15px 35px;
+  text-align: center;
+}
+#hover:hover{
+  background-color: #4fcaef;
+}
+
+#product {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 10px;
+  color: black;
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 205px;
+}
+
+#product a{
+  padding: 15px 35px;
+  text-align: center;
+}
+
+#product:hover{
+  background-color: #4fcaef;
+}
+
+
+/*table style*/
+
+table {
+  border: 1px solid #fff;
+  padding: 10px;
+  height: 450px;
+  font-size: 20px;
+  font-family: 'Fugaz One', cursive;
+}
+
+img {
+  width: 500px;
+
+}

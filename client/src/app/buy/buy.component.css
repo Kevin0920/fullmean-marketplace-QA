@@ -1,0 +1,21 @@
+body {
+    background: url(/./../assets/image/pexels-photo-673648.jpeg) no-repeat center center;
+    -webkit-background-attachment: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 0;
+    position: relative;
+}
+
+img {
+    width: 500px;
+}
+.well {
+    overflow-y: scroll;
+    height: 600px;
+    background-color: #dae8e6;
+}
+
+nav {
+    border-radius: 0px;
+}

@@ -1,0 +1,41 @@
+#logout {
+  margin-left: 1010px;
+  height: 40px;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+#display{
+  background-color: hsla(0, 100%, 30%, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;  
+}
+
+h1, h2 {
+  font-family: 'Berkshire Swash', cursive;
+  font: bold;
+  font-size: 60px;
+}
+
+nav {
+  border-radius: 0px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+  background: url(/assets/image/pexels-photo-707583.jpeg) no-repeat center center;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  height: 800px;
+}
+
+table {
+  font-size: 25px;
+}

@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" [routerLink]="['/create']">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a [routerLink]="['/products', user._id]">Go Back Create Page</a>
+        </li>
+      </ul>
+      <button style="float:right;" class="btn btn-danger navbar-btn">
+        <a (click)="logout()">Log Out</a>
+      </button>
+    </div>
+  </nav>
+  <div class="container">
+    <h1 style="font-family: 'Fugaz One', cursive;">Hi {{user?.userName | uppercase}} !</h1>
+    <h3 style="font-family: 'Fugaz One', cursive;"> Become as member at {{user.createdAt | date:'medium'}} !</h3>
+  </div>
+  <div id="scrollbar" class="container">
+    <div class="form-group" *ngFor="let p of products">
+      <div class="info1">
+        <img src="{{p.image}}">
+      </div>
+      <div class="info2">
+        <h3>Title: {{p.title}}</h3>
+        <h3>Price: {{p.price}}</h3>
+        <h3>Location: {{p.location}}</h3>
+        <h3>Description: {{p.description}}</h3>
+        <button *ngIf="p._user._id === user._id" (click)="deleteProd(p._id)" class="btn btn-danger">Delete</button>
+
+        <button *ngIf="p._user._id !== user._id" (click)="contact(p._user._id)" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel" style="color: grey;">
+            Poster:
+          </h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 style="color: #4186cb;">Name: {{poster.userName}}</h5>
+          <br>
+          <h5 style="color: #4186cb;">Email: {{poster.email}}</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

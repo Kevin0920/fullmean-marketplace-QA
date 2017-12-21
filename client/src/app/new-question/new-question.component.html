@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-group">
+      <div class="box">
+        <button (click)="logout()" class="btn btn-info" style="float: right; font-family: 'Fugaz One', cursive;">Log Out</button>
+      </div>
+      <div class="box">
+        <button id="hover" class="btn btn-warning" style="font-family: 'Fugaz One', cursive;"><a [routerLink]="['/create']">Home</a></button>
+      </div>
+      <h1>New Question</h1>
+        <div class="panel-body">
+          <form class="form-horizontal" (submit)="creatQues()" #quesData="ngForm">
+            <div class="form-group">
+              <label class="control-label col-sm-2">Question:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Enter question....." name="content"
+                [(ngModel)] = "newQues.content"
+                required minlength="10"
+                #questionData="ngModel">
+              </div>
+            </div>
+            <div class="alert alert-warning" *ngIf = "questionData.invalid && (questionData.dirty || questionData.touched)">
+                <strong>
+                  Warning! please fill in your question !!!
+                </strong>
+            </div>
+           
+
+            <div class="form-group">
+              <label class="control-label col-sm-2">Description(Optional):</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" rows="5" name="description"
+                [(ngModel)] = "newQues.description"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success" style="font-family: 'Fugaz One', cursive;"
+              [disabled]="!quesData.valid">Submit</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-danger"
+              style="font-family: 'Fugaz One', cursive;"><a [routerLink]="['/home']">Cancel</a></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

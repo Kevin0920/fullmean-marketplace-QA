@@ -1,0 +1,32 @@
+.container {
+  width: 80%;
+}
+.box {
+  margin-top: 10px;
+}
+h1 {
+  font-family: 'Berkshire Swash', cursive;
+  color: #fff;
+}
+label {
+  color: blanchedalmond;
+  font: bold;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 20px;
+  text-shadow: 2px 2px gray;
+}
+body {
+  background: url(/./../assets/image/pexels-photo-217316.jpeg) no-repeat center center;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  height: 830px;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  margin-left: 206px;
+}

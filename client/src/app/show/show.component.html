@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"><a [routerLink]="['/create']">Home</a></li>
+            <li class="active"><a [routerLink]="['/answer', question._id]">Answer this quesiton</a></li>
+            <button id="logout" class="btn btn-danger"><a (click)="logout()">Log Out</a></button>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+      <div id="display" class="form-group">
+          <h1>{{question.content}}</h1>
+          <h2>{{question.description}}</h2>
+      </div>
+
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Author:</th>
+            <th>Answer:</th>
+            <th>Detail (Support Point):</th>
+            <th>Likes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let one of question._answers">
+            <td>{{user.userName}}</td>
+            <td>{{one.content}}</td>
+            <td>{{one.detail}}</td>
+            <td>{{one.likes}}
+              <button class="btn btn-warning" (click) = "like(one._id)" >Like!</button></td>
+              <!-- {{one._id}} -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+img {
+    width: 500px;
+}
+
+.info1 {
+    display: inline-block;
+}
+.info2 {
+    display: inline-block;
+}
+h3 {
+    font-weight: bold;
+}
+#scrollbar {
+    overflow-y: scroll;
+    max-height: 1000px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+nav {
+    border-radius: 0px;
+}
